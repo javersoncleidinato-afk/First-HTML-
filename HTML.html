@@ -1,0 +1,72 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fun Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(120deg, #ff6ec4, #7873f5);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }.card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  width: 300px;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #7873f5;
+  color: white;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #ff6ec4;
+}
+
+.emoji {
+  font-size: 40px;
+  margin-top: 10px;
+  display: block;
+}
+
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Click for a surprise 😄</h1>
+    <button onclick="changeEmoji()">Click here</button>
+    <span class="emoji" id="emoji">🙂</span>
+  </div>  <script>
+    const emojis = ["😂", "🤖", "😎", "🔥", "🎉", "👾", "🌈", "💀"];
+
+    function changeEmoji() {
+      const random = Math.floor(Math.random() * emojis.length);
+      document.getElementById("emoji").textContent = emojis[random];
+
+      document.body.style.background =
+        "linear-gradient(120deg, " + randomColor() + ", " + randomColor() + ")";
+    }
+
+    function randomColor() {
+      return "#" + Math.floor(Math.random()*16777215).toString(16);
+    }
+  </script></body>
+</html>
